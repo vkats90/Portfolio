@@ -1,8 +1,16 @@
-import './globals.css'
+import "./globals.css";
+import { Anton } from "@next/font/google";
+
+const anton = Anton({
+  variable: "--font-anton",
+  display: "swap",
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={"$(anton.variable)"}>
       {/*
         <head /> will contain the components returned by the nearest parent
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
@@ -10,5 +18,5 @@ export default function RootLayout({ children }) {
       <head />
       <body>{children}</body>
     </html>
-  )
+  );
 }
