@@ -3,4 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+    @font-face {
+        font-family: "pacifica";
+        src: url("../public/fonts/Pacifica\ Condensed\ Regular.otf");
+    }
+    @font-face {
+        font-family: "rumor";
+        src: url("../public/fonts/The\ Rumor.ttf");
+    }
+    
 }
