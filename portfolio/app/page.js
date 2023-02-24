@@ -2,6 +2,7 @@ import Header from "./components/header.jsx";
 import Footer from "./components/footer.jsx";
 import Obstructor from "./utils/Obstructor.js";
 import Card from "./components/card.jsx";
+import Galary from "./components/galary.jsx";
 
 export default function Home() {
   return (
@@ -29,6 +30,10 @@ export default function Home() {
             text="Just like this website!"
           ></Card>
         </div>
+        <h2 className="text-2xl my-16 text-primary">
+          Here's a little preview:
+        </h2>
+        <Galary />
       </main>
 
       <Footer />

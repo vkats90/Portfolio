@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        bg_image: "url('../src/assets/Sunset-trees.jpg')",
+        bg_image: "url('/assets/Sunset-trees.jpg')",
       },
       animation: {
         fadeIn: "fadeIn 1s ease-in forwards",

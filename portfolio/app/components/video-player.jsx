@@ -3,11 +3,10 @@ import { useState, useEffect } from "react";
 
 export default function Videoplayer() {
   const [autoPlay, setAutoPlay] = useState(false);
-  useEffect(() => {}, []);
   return (
     <video
       id="vid"
-      className=""
+      className="rounded-md"
       onMouseEnter={() => setAutoPlay(true)}
       onMouseLeave={() => setAutoPlay(false)}
       loop
