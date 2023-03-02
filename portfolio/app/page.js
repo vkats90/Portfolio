@@ -22,18 +22,16 @@ export default function Home() {
             side="2deg"
             video="hidden"
             top="-2deg"
+            link="/Photography"
           ></Card>
           <Card
             top="2deg"
             side="-2deg"
             head="I develop websites"
             text="Just like this website!"
+            link="/Projects"
           ></Card>
         </div>
-        <h2 className="text-2xl my-16 text-primary">
-          Here's a little preview:
-        </h2>
-        <Galary />
       </main>
 
       <Footer />

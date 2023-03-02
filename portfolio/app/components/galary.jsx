@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ImageComp from "./image-comp";
 
 export default function Galary() {
   let images = [
@@ -12,14 +13,12 @@ export default function Galary() {
     "/assets/DSC05491-3.jpg",
     "/assets/DSC05569-1.jpg",
     "/assets/DSC05723-5.jpg",
-    "/assets/Sunset-trees.jpg",
   ];
   return (
-    <div className=" grid grid-flow-row grid-cols-5 w-fit my-4 justify-center">
+    <div className=" md:mx-16 mx-6 p-2 border [&:hover>img]:opacity-50 border-secondary rounded-md grid grid-flow-dense grid-cols-3 lg:grid-cols-5 w-fit my-4 justify-center">
       {images.map((x, i) => (
-        <Image src={x} key={i} width={200} height={250} />
+        <ImageComp key={i} src={x} />
       ))}
-      <div className="h-60 w-60  border border-priamry"></div>
     </div>
   );
 }

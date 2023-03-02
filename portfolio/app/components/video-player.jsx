@@ -1,12 +1,12 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function Videoplayer() {
   const [autoPlay, setAutoPlay] = useState(false);
   return (
     <video
       id="vid"
-      className="rounded-md"
+      className="rounded-md z-0"
       onMouseEnter={() => setAutoPlay(true)}
       onMouseLeave={() => setAutoPlay(false)}
       loop
