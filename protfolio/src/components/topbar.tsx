@@ -4,10 +4,10 @@ import GithubIcon from "../assets/github.png";
 
 const TopBar = () => {
   return (
-    <div className="flex flex-row w-full  px-5  h-10 ">
+    <div className="fixed flex flex-row w-full  px-5  h-10 z-30 bg-gradient-to-r from-white/0 to-white/50 ">
       <div id="logo" className="flex-none flex flex-col ">
-        <h1>Vlad</h1>
-        <h1 className="-my-2 mx-3 p-0">Kats</h1>
+        <h1 className="text-lg">VLAD</h1>
+        <h1 className="-my-2 mx-3 p-0 text-lg">KATS</h1>
       </div>
       <div
         id="links"
