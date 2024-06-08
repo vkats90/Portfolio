@@ -15,11 +15,17 @@ export default function Hamburger() {
           <span className="block h-[3px] w-8  bg-black group-hover:bg-primary transition duration-200"></span>
           <span className="block h-[3px] w-8  bg-black group-hover:bg-primary transition duration-200"></span>
         </div>
+        <div
+          onClick={() => setIsNavOpen((prev) => !prev)}
+          className={`w-full h-[100vh] absolute bg-black/80 top-0 left-0 ${
+            isNavOpen ? "opacity-1" : "opacity-0 invisible"
+          }`}
+        ></div>
 
-        <div className={isNavOpen ? "showMenuNav bg-black/80" : "hideMenuNav"}>
+        <div className="block  w-full h-full top-0 left-0 ">
           <ul
-            className={`relative flex flex-col  text-xl text-gray-600 items-center justify-between min-h-[250px] h-[50%] py-[20%] rounded-lg shadow-sm shadow-white bg-[#EAEFF5] w-[90%] transition duration-300 ${
-              isNavOpen ? "translate-x-9" : ""
+            className={`absolute flex flex-col top-[50px] text-xl text-gray-600 items-center justify-between min-h-[250px] h-[50%] w-[300px] py-[10%] rounded-lg shadow-sm shadow-white bg-[#EAEFF5] border-2 border-primary   transition duration-700 ${
+              isNavOpen ? "" : "-translate-x-[150%]"
             }`}
           >
             <div //exit button
@@ -39,14 +45,23 @@ export default function Hamburger() {
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             </div>
-            <Link className="self-center cursor-pointer " to="/resume">
-              Resume
+            <Link
+              className="self-center cursor-pointer hover:text-primary"
+              to="/resume"
+            >
+              RESUME
             </Link>
-            <Link className="self-center cursor-pointer " to="/projects">
-              Projects
+            <Link
+              className="self-center cursor-pointer hover:text-primary"
+              to="/projects"
+            >
+              PROJECTS
             </Link>
-            <Link className="self-center cursor-pointer " to="/contact">
-              Contact
+            <Link
+              className="self-center cursor-pointer hover:text-primary"
+              to="/contact"
+            >
+              CONTACT
             </Link>
           </ul>
         </div>
@@ -54,18 +69,17 @@ export default function Hamburger() {
 
       <style>{`
       .hideMenuNav {
-       
-        
+        display:none;
+       opacity:0
       }
       .showMenuNav {
-       
         display: block;
         position: absolute;
         width: 100%;
         height: 100vh;
         top: 0;
         left: 0;
-       
+        opacity:1;
         z-index: 10;
         display: flex;
         flex-direction: column;
