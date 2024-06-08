@@ -18,13 +18,22 @@ const TopBar = () => {
         id="links"
         className=" flex-grow  pr-10 hidden md:flex flex-row justify-end gap-4   items-stretch "
       >
-        <Link className="self-center cursor-pointer " to="/resume">
+        <Link
+          className="self-center cursor-pointer hover:text-emerald-800"
+          to="/resume"
+        >
           Resume
         </Link>
-        <Link className="self-center cursor-pointer " to="/projects">
+        <Link
+          className="self-center cursor-pointer hover:text-emerald-800"
+          to="/projects"
+        >
           Projects
         </Link>
-        <Link className="self-center cursor-pointer " to="/contact">
+        <Link
+          className="self-center cursor-pointer hover:text-emerald-800 "
+          to="/contact"
+        >
           Contact
         </Link>
       </div>
