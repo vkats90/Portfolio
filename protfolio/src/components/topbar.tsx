@@ -1,17 +1,22 @@
 import { Link } from "react-router-dom";
 import LinkedInIcon from "../assets/linkedin.png";
 import GithubIcon from "../assets/github.png";
+import Hamburger from "./hamburger";
 
 const TopBar = () => {
   return (
     <div className="fixed flex flex-row w-full  px-5  h-10 z-30 bg-gradient-to-r from-white/0 to-white/50 ">
-      <div id="logo" className="flex-none flex flex-col ">
+      <Hamburger />
+      <div
+        id="logo"
+        className="flex-none flex flex-col  flex-grow md:flex-none text-center md:text-left"
+      >
         <h1 className="text-lg">VLAD</h1>
-        <h1 className="-my-2 mx-3 p-0 text-lg">KATS</h1>
+        <h1 className="-my-2 translate-x-3 p-0 text-lg ">KATS</h1>
       </div>
       <div
         id="links"
-        className=" flex-grow  pr-10 flex flex-row justify-end gap-4   items-stretch "
+        className=" flex-grow  pr-10 hidden md:flex flex-row justify-end gap-4   items-stretch "
       >
         <Link className="self-center cursor-pointer " to="/resume">
           Resume
