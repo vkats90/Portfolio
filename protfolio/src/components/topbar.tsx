@@ -11,12 +11,16 @@ const TopBar = () => {
         id="logo"
         className="flex-none flex flex-col  flex-grow md:flex-none text-center md:text-left"
       >
-        <h1 className="text-lg">VLAD</h1>
-        <h1 className="-my-2 translate-x-3 p-0 text-lg ">KATS</h1>
+        <h1 className="text-2xl font-Bebas ">
+          VL<span className="text-primary">A</span>D
+        </h1>
+        <h1 className="-my-3 translate-x-2    p-0 text-2xl font-Bebas">
+          K<span className="text-primary">A</span>TS
+        </h1>
       </div>
       <div
         id="links"
-        className=" flex-grow  pr-10 hidden md:flex flex-row justify-end gap-4   items-stretch "
+        className=" flex-grow text-xl pr-10 hidden md:flex flex-row justify-end gap-4   items-stretch "
       >
         <Link
           className="self-center cursor-pointer hover:text-emerald-800"
