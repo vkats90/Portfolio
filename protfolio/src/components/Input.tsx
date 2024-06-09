@@ -19,6 +19,7 @@ const Input = ({ text, type }: { text: string; type?: string }) => {
         {text}
       </p>
       <input
+        name={text}
         type={type ? type : "text"}
         className={`z-10 w-[200px] h-8 text-center border-primary border rounded-md placeholder:text-center transition duration-300 ease-out-in ${
           expanded ? "translate-x-10" : ""

@@ -19,9 +19,10 @@ const TextArea = ({ text }: { text: string }) => {
         {text}
       </p>
       <textarea
-        className={`z-10 w-[200px] text-center border-primary border rounded-md placeholder:text-center transition duration-300 ease-out-in ${
+        name={text}
+        className={`z-10  text-center border-primary border rounded-md placeholder:text-center transition duration-300 ease-out-in ${
           expanded ? "translate-x-10" : ""
-        }`}
+        } ${input.length > 20 ? "w-[250px] h-36" : "w-[200px]"}`}
         value={input}
         placeholder={text}
         onChange={({ target }) =>

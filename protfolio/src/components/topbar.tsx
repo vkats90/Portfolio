@@ -1,15 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LinkedInIcon from "../assets/linkedin.png";
 import GithubIcon from "../assets/github.png";
 import Hamburger from "./hamburger";
 
 const TopBar = () => {
+  const navigate = useNavigate();
   return (
     <div className="fixed flex flex-row w-full  px-5  h-10 z-30 bg-gradient-to-r from-white/0 to-white/50 ">
       <Hamburger />
       <div
         id="logo"
-        className="flex-none flex flex-col  flex-grow md:flex-none text-center md:text-left"
+        className="flex-none flex flex-col  flex-grow md:flex-none text-center md:text-left cursor-pointer"
+        onClick={() => navigate("/")}
       >
         <h1 className="text-xl md:text-2xl font-Bebas ">
           VL<span className="text-primary">A</span>D

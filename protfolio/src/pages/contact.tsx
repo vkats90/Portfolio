@@ -1,24 +1,39 @@
 import Input from "../components/Input";
 import TextArea from "../components/TextArea";
-//import emailjs from "@emailjs/browser";
+import { useRef } from "react";
+import { sendEmail } from "../utils/emailJS";
 
 const Contact = () => {
-  /* const handleSubmit = (e: React.FormEvent) => {
+  const form = useRef<HTMLFormElement>(null);
+
+  const getFormData = (form: HTMLFormElement) => {
+    const inputs = form.querySelectorAll<
+      HTMLInputElement | HTMLTextAreaElement
+    >("input, textarea");
+    const formData: { [key: string]: string } = {};
+
+    inputs.forEach((input) => {
+      if (input.name) {
+        formData[input.name.toLowerCase()] = input.value;
+      }
+    });
+
+    sendEmail(formData);
+
+    return formData;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm("service_ut56vmi", "template_10fl34t", form.current, {
-        publicKey: "b93puRb5Dm3NaiYqW",
-      })
-      .then(
-        () => {
-          console.log("SUCCESS!");
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        }
-      );
-  };*/
+    if (!form.current) {
+      return;
+    }
+
+    const formData = getFormData(form.current);
+
+    console.log(formData);
+  };
 
   return (
     <div className="z-0 h-[100vh] flex  bg-[#EAEFF5]  items-center justify-center">
@@ -31,8 +46,12 @@ const Contact = () => {
             Let's talk
           </h1>
         </h1>
-        <form className=" flex flex-col gap-3 items-end justify-center">
-          <Input text="First Name" />
+        <form
+          onSubmit={handleSubmit}
+          ref={form}
+          className=" flex flex-col gap-3 items-end justify-center"
+        >
+          <Input text="Name" />
           <Input text="Company" />
           <Input text="Phone" />
           <Input text="Email" type="email" />
@@ -40,12 +59,21 @@ const Contact = () => {
           <TextArea text="Message" />
           <button
             type="submit"
-            // onClick={handleSubmit}
             className="px-10 py-1 text-xl m-auto rounded-lg my-4 text-black border-2 border-primary shadow-md shadow-black/30  hover:bg-emerald-800 hover:bg-opacity-30 transition duration-200"
           >
             Submit
           </button>
         </form>
+        <p>
+          Or send me a direct email: to{" "}
+          <a
+            href="mailto:mars77@gmail.com"
+            target="_blank"
+            className="text-primary/70 hover:text-primary"
+          >
+            mars77@gmail.com
+          </a>{" "}
+        </p>
       </div>
     </div>
   );
