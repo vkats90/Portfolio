@@ -24,24 +24,38 @@ const TopBar = () => {
         id="links"
         className=" flex-grow text-xl pr-10 hidden md:flex flex-row justify-end gap-4   items-stretch "
       >
-        <Link
-          className="self-center cursor-pointer hover:text-emerald-800"
-          to="/resume"
-        >
-          Resume
-        </Link>
-        <Link
-          className="self-center cursor-pointer hover:text-emerald-800"
-          to="/projects"
-        >
-          Projects
-        </Link>
-        <Link
-          className="self-center cursor-pointer hover:text-emerald-800 "
-          to="/contact"
-        >
-          Contact
-        </Link>
+        {location.pathname != "/" && (
+          <Link
+            className="self-center cursor-pointer hover:text-primary"
+            to="/"
+          >
+            Home
+          </Link>
+        )}
+        {location.pathname != "/resume" && (
+          <Link
+            className="self-center cursor-pointer hover:text-primary"
+            to="/resume"
+          >
+            Resume
+          </Link>
+        )}
+        {location.pathname != "/projects" && (
+          <Link
+            className="self-center cursor-pointer hover:text-primary"
+            to="/projects"
+          >
+            Projects
+          </Link>
+        )}
+        {location.pathname != "/contact" && (
+          <Link
+            className="self-center cursor-pointer hover:text-primary"
+            to="/contact"
+          >
+            Contact
+          </Link>
+        )}
       </div>
       <div
         id="social"

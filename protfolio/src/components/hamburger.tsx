@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Hamburger() {
   const [isNavOpen, setIsNavOpen] = useState(false);
-
+  const location = useLocation();
+  console.log(location.pathname);
   return (
     <nav>
       <section className="MOBILE-MENU flex md:hidden">
@@ -45,24 +46,42 @@ export default function Hamburger() {
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             </div>
-            <Link
-              className="self-center cursor-pointer hover:text-primary"
-              to="/resume"
-            >
-              RESUME
-            </Link>
-            <Link
-              className="self-center cursor-pointer hover:text-primary"
-              to="/projects"
-            >
-              PROJECTS
-            </Link>
-            <Link
-              className="self-center cursor-pointer hover:text-primary"
-              to="/contact"
-            >
-              CONTACT
-            </Link>
+            {location.pathname != "/" && (
+              <Link
+                onClick={() => setIsNavOpen(false)}
+                className="self-center cursor-pointer hover:text-primary"
+                to="/"
+              >
+                HOME
+              </Link>
+            )}
+            {location.pathname != "/resume" && (
+              <Link
+                onClick={() => setIsNavOpen(false)}
+                className="self-center cursor-pointer hover:text-primary"
+                to="/resume"
+              >
+                RESUME
+              </Link>
+            )}
+            {location.pathname != "/projects" && (
+              <Link
+                onClick={() => setIsNavOpen(false)}
+                className="self-center cursor-pointer hover:text-primary"
+                to="/projects"
+              >
+                PROJECTS
+              </Link>
+            )}
+            {location.pathname != "/contact" && (
+              <Link
+                onClick={() => setIsNavOpen(false)}
+                className="self-center cursor-pointer hover:text-primary"
+                to="/contact"
+              >
+                CONTACT
+              </Link>
+            )}
           </ul>
         </div>
       </section>
