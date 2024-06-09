@@ -11,10 +11,10 @@ const TopBar = () => {
         id="logo"
         className="flex-none flex flex-col  flex-grow md:flex-none text-center md:text-left"
       >
-        <h1 className="text-2xl font-Bebas ">
+        <h1 className="text-xl md:text-2xl font-Bebas ">
           VL<span className="text-primary">A</span>D
         </h1>
-        <h1 className="-my-3 translate-x-2    p-0 text-2xl font-Bebas">
+        <h1 className="-my-3 translate-x-2    p-0 text-xl md:text-2xl font-Bebas">
           K<span className="text-primary">A</span>TS
         </h1>
       </div>
