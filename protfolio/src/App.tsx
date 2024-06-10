@@ -1,4 +1,3 @@
-//replace social logos with svgs
 //replace main image
 
 import { Outlet } from "react-router-dom";
