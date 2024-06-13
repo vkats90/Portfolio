@@ -16,8 +16,8 @@ const ExperienceSection: React.FC<SectionType> = ({
   logo,
 }) => {
   return (
-    <div className="flex my-4 flex-col md:flex-row bg-gradient-to-br from-white via-[#EAEFF5] to-primary/10 shadow-md p-6 rounded-lg mb-4 max-w-[90%] md:max-w-[50%] m-auto">
-      <div className="flex-shrink-0 md:w-12 md:h-12 w-12 h-12 bg-white rounded-full overflow-hidden">
+    <div className="flex my-4 flex-col md:flex-row  p-6 rounded-lg mb-4 max-w-[90%] md:max-w-[50%] m-auto">
+      <div className="flex-shrink-0 md:w-12 md:h-12 w-12 h-12  rounded-full overflow-hidden">
         {logo && (
           <img
             src={logo}

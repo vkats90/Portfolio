@@ -258,10 +258,13 @@ const Resume = () => {
         <h1 id="outer">
           <h1
             id="inner"
-            className="effect-shine md:text-6xl text-4xl md:my-6 my-2 text-black font-Bebas "
+            className="effect-shine md:text-6xl text-5xl md:my-6 my-2 text-black font-Bebas "
           >
-            EXPERIENCE
+            RESUME
           </h1>
+        </h1>
+        <h1 className="text-4xl font-bold font-Bebas mt-16 underline decoration-primary ">
+          EXPERIENCE
         </h1>
         {experience.map((position, i) => {
           return (
@@ -276,19 +279,16 @@ const Resume = () => {
             )
           );
         })}
+        <p className="font-semibold text-xl">Further experience lower down </p>
       </div>
       <div
         id="education"
         className="flex flex-col my-16 border-t border-black items-center"
       >
-        <h1 id="outer">
-          <h1
-            id="inner"
-            className="effect-shine md:text-6xl text-4xl md:my-6 my-2 text-black font-Bebas "
-          >
-            Education
-          </h1>
+        <h1 className="text-4xl font-bold font-Bebas my-8 underline decoration-primary">
+          EDUCATION
         </h1>
+
         {education.map((course) => {
           return (
             <EducationSection
@@ -305,13 +305,8 @@ const Resume = () => {
         id="further-experience"
         className="flex flex-col  items-center my-16 border-t border-black"
       >
-        <h1 id="outer" className=" ">
-          <h1
-            id="inner"
-            className="effect-shine md:text-6xl text-4xl md:my-6 my-2 text-black font-Bebas "
-          >
-            FURTHER EXPERIENCE
-          </h1>
+        <h1 className="text-4xl font-bold font-Bebas my-8 underline decoration-primary">
+          FURTHER EXPERIENCE
         </h1>
         {experience.map((position, i) => {
           return (
