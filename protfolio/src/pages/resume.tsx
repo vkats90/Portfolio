@@ -1,6 +1,11 @@
-import ExperienceSection from "../components/resume-section";
+import ExperienceSection from "../components/experience-section";
 import MobileEscapeLogo from "../assets/MobileEscape.png";
 import EducationSection from "../components/education-section";
+import HelsinkiLogo from "../assets/Helsinki-logo.png";
+import FreeCodeCampLogo from "../assets/freecodecamp-512.webp";
+import TechnionLogo from "../assets/Technion-logo.jpeg";
+import GrahamLogo from "../assets/Graham.png";
+import TRLogo from "../assets/TRlogo.webp";
 
 const education = [
   {
@@ -42,7 +47,7 @@ const education = [
         enabling me to build and maintain complex web applications.
       </div>
     ),
-    logo: "/path/to/University_of_Helsinki_Logo.png", // Add the correct path to the logo
+    logo: HelsinkiLogo,
   },
   {
     facility: "freeCodeCamp",
@@ -56,7 +61,7 @@ const education = [
         ES6.
       </div>
     ),
-    logo: "/path/to/freeCodeCamp_Logo.png", // Add the correct path to the logo
+    logo: FreeCodeCampLogo,
   },
   {
     facility: "Technion - Israel Institute of Technology",
@@ -69,13 +74,13 @@ const education = [
         Engineering and Structural Engineering in Canada.
       </div>
     ),
-    logo: "/path/to/Technion_Logo.png", // Add the correct path to the logo
+    logo: TechnionLogo,
   },
   {
     facility: "Igal Alon High School",
     period: "2005 - 2008",
     description: <div></div>,
-    logo: "/path/to/Igal_Alon_High_School_Logo.png", // Add the correct path to the logo
+    logo: "",
   },
 ];
 
@@ -164,7 +169,7 @@ const experience = [
   },
   {
     position: "Career Break: World Travel and Volunteer Work",
-    company: "Self Employed",
+    company: "",
     period: "Apr 2019 - Mar 2020 (1 year)",
     description: (
       <div>
@@ -194,7 +199,7 @@ const experience = [
         management, and vendor relations.
       </div>
     ),
-    logo: "",
+    logo: GrahamLogo,
   },
   {
     position: "Construction Technician",
@@ -210,14 +215,46 @@ const experience = [
         performance.
       </div>
     ),
-    logo: "",
+    logo: TRLogo,
   },
 ];
 
 const Resume = () => {
   return (
     <div className="z-0 h-full py-8 bg-[#EAEFF5]">
-      <div id="experience" className="flex flex-col  items-center">
+      <nav className="nav  p-4 bg-[#EAEFF5] md:border-r md:border-b-0 border-b my-8 border-black text-sm md:text-md m-auto max-w-[90%] md:max-w-[20vw] md:w-[700px] md:pl-6 md:top-[40vh] md:fixed">
+        <h1 className="flex md:flex-col flex-row md:space-y-4 text-2xl font-semibold mb-4 space-x-4 md:space-x-0">
+          {" "}
+          JUMP TO SECTION:
+        </h1>
+        <ul className="flex md:flex-col flex-row md:space-y-4 space-x-4 md:space-x-0">
+          <li>
+            <a
+              href="#experience"
+              className="text-black hover:underline hover:text-primary"
+            >
+              - Experience
+            </a>
+          </li>
+          <li>
+            <a
+              href="#education"
+              className="text-black hover:underline hover:text-primary"
+            >
+              - Education
+            </a>
+          </li>
+          <li>
+            <a
+              href="#further-experience"
+              className="text-black hover:underline hover:text-primary"
+            >
+              - Further Experience
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div id="experience" className="flex flex-col mb-16  items-center">
         <h1 id="outer">
           <h1
             id="inner"
@@ -240,7 +277,10 @@ const Resume = () => {
           );
         })}
       </div>
-      <div id="education" className="flex flex-col  items-center">
+      <div
+        id="education"
+        className="flex flex-col my-16 border-t border-black items-center"
+      >
         <h1 id="outer">
           <h1
             id="inner"
@@ -249,7 +289,7 @@ const Resume = () => {
             Education
           </h1>
         </h1>
-        {education.map((course, i) => {
+        {education.map((course) => {
           return (
             <EducationSection
               facility={course.facility}
@@ -261,8 +301,11 @@ const Resume = () => {
           );
         })}
       </div>
-      <div id="further-experience" className="flex flex-col  items-center">
-        <h1 id="outer">
+      <div
+        id="further-experience"
+        className="flex flex-col  items-center my-16 border-t border-black"
+      >
+        <h1 id="outer" className=" ">
           <h1
             id="inner"
             className="effect-shine md:text-6xl text-4xl md:my-6 my-2 text-black font-Bebas "

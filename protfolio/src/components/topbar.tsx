@@ -1,6 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-import LinkedInIcon from "../assets/linkedin.png";
-import GithubIcon from "../assets/github.png";
 import Hamburger from "./hamburger";
 
 const TopBar = () => {

@@ -1,4 +1,6 @@
 //replace main image
+// implement intersection observer
+// add images to experience
 
 import { Outlet } from "react-router-dom";
 
