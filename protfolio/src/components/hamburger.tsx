@@ -18,7 +18,7 @@ export default function Hamburger() {
         </div>
         <div
           onClick={() => setIsNavOpen((prev) => !prev)}
-          className={`w-full h-[100vh] absolute bg-black/80 top-0 left-0 ${
+          className={`w-full h-[100vh] absolute bg-black/80  top-0 left-0 ${
             isNavOpen ? "opacity-1" : "opacity-0 invisible"
           }`}
         ></div>

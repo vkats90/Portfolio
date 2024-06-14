@@ -28,11 +28,9 @@ const Home = () => {
           <SecondaryButton onClick={() => navigate("/resume")} text="RESUME" />
         </div>
       </div>
-      <div className="relative top-[85%] text-center -mt-14 md:mt-0 mx-auto max-w-[90%] md:max-w-[50%]  shadow-lg shadow-black/50  bg-gradient-to-t from-primary/20 to-white rounded-lg  overflow-hidden">
-        <div className=" absolute w-[300px] h-[300px] -top-10 -right-6 bg-primary/20 rounded-full z-0"></div>
-        <div className=" absolute w-[100px] h-[100px] -bottom-10 -left-6 bg-primary/10 rounded-full z-0"></div>
-        <h1 className="text-3xl md:text-4xl mt-2">Summary</h1>
-        <p className="relative p-5 text-lg text-left z-10">
+      <div className="relative top-[85%] text-center -mt-14 md:mt-0 mx-auto max-w-[90%] md:max-w-[50%]  overflow-hidden">
+        <h1 className="text-3xl md:text-5xl mt-2 font-Bebas">Summary</h1>
+        <p className="relative p-5 text-lg text-left z-10 text-gray-500">
           Passionate and driven web developer with a strong foundation in
           full-stack development and a proven track record in e-commerce and
           operations management. With hands-on experience in Frontend and

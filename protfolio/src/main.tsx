@@ -6,6 +6,7 @@ import "./index.css";
 import Home from "./pages/home.tsx";
 import Contact from "./pages/contact.tsx";
 import Resume from "./pages/resume.tsx";
+import Projects from "./pages/projects.tsx";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/resume",
         element: <Resume />,
+      },
+      {
+        path: "/projects",
+        element: <Projects />,
       },
     ],
   },
