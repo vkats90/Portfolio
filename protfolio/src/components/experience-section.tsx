@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useInView } from "react-intersection-observer";
 interface SectionType {
   position: string;
   company: string;
@@ -15,8 +15,17 @@ const ExperienceSection: React.FC<SectionType> = ({
   description,
   logo,
 }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    rootMargin: "-100px 0px",
+  });
   return (
-    <div className="flex my-4 flex-col md:flex-row  p-6 rounded-lg mb-4 max-w-[90%] md:max-w-[50%] m-auto">
+    <div
+      ref={ref}
+      className={`flex my-4 flex-col md:flex-row  p-6 rounded-lg mb-4 max-w-[90%] md:max-w-[50%] m-auto transition ease-in duration-500 ${
+        inView ? "opacity-1" : "opacity-0 translate-y-5 blur-sm"
+      }`}
+    >
       <div className="flex-shrink-0 md:w-12 md:h-12 w-12 h-12  rounded-full overflow-hidden">
         {logo && (
           <img

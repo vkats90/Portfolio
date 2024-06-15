@@ -254,7 +254,10 @@ const Resume = () => {
           </li>
         </ul>
       </nav>
-      <div id="experience" className="flex flex-col mb-16  items-center">
+      <div
+        id="experience"
+        className={`flex flex-col mb-16  items-center transition-opacity `}
+      >
         <h1 id="outer">
           <h1
             id="inner"
@@ -303,7 +306,7 @@ const Resume = () => {
       </div>
       <div
         id="further-experience"
-        className="flex flex-col  items-center my-16 border-t border-black"
+        className={`flex flex-col  items-center my-16 border-t border-black `}
       >
         <h1 className="text-4xl font-bold font-Bebas my-8 underline decoration-primary">
           FURTHER EXPERIENCE

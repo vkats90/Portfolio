@@ -8,7 +8,7 @@ import TopBar from "./components/topbar";
 
 function App() {
   return (
-    <div className="relative">
+    <div className="relative bg-backg">
       <TopBar />
       <Outlet />
     </div>

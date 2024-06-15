@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         primary: "#417300",
+        backg: "#E7F3F7",
       },
       fontFamily: {
         Bebas: ["Bebas Neue", "sans-serif"],

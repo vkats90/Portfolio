@@ -1,35 +1,50 @@
-import BackgroundImage from "../assets/Homepage-bg.jpg";
+import BackgroundImage from "../assets/Homepage-bg2.jpg";
 import MainButton from "../components/mainBotton";
 import SecondaryButton from "../components/secondaryButton";
 import { useNavigate } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
 
 const Home = () => {
   const navigate = useNavigate();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    rootMargin: "-100px 0px",
+  });
   return (
-    <div className="z-0 h-[100vh] bg-[#EAEFF5] ">
-      <img
-        src={BackgroundImage}
-        className="absolute top-0 right-0 h-[100vh] max-w-fit z-0 opacity-40 lg:opacity-100"
-      />
-      <div className="relative z-10 w-fit md:left-[15%] top-[40%] text-center m-auto md:m-0">
-        <h1 id="outer">
-          <h1
-            id="inner"
-            className="effect-shine md:text-7xl text-4xl md:my-6 my-2 text-black font-Bebas"
-          >
-            VLADIMIR KATS
+    <div className="z-0 h-full">
+      <div className="relative h-[100vh]">
+        <img
+          src={BackgroundImage}
+          className="absolute top-0 right-0 h-[100vh] max-w-fit z-0 opacity-40 lg:opacity-100"
+        />
+        <div className="relative z-10 w-fit md:left-[15%] top-[40%] text-center m-auto md:m-0">
+          <h1 id="outer">
+            <h1
+              id="inner"
+              className="effect-shine md:text-7xl text-4xl md:my-6 my-2 text-black font-Bebas"
+            >
+              VLADIMIR KATS
+            </h1>
           </h1>
-        </h1>
-        <p className="md:text-4xl text-xl text-primary font-regular font-Glory [text-shadow:_0_2px_0_rgb(1px_0_0_/_40%)]">
-          A FULL STACK SOFTWARE DEVELOPER
-        </p>
-        <div className="flex md:flex-row flex-col gap-4 mt-8 w-full justify-center items-center ">
-          <MainButton onClick={() => navigate("/contact")} text="CONTACT" />
-          <SecondaryButton onClick={() => navigate("/resume")} text="RESUME" />
+          <p className="md:text-4xl text-xl text-primary font-regular font-Glory [text-shadow:_0_2px_0_rgb(1px_0_0_/_40%)]">
+            A FULL STACK SOFTWARE DEVELOPER
+          </p>
+          <div className="flex md:flex-row flex-col gap-4 mt-8 w-full justify-center items-center ">
+            <MainButton onClick={() => navigate("/contact")} text="CONTACT" />
+            <SecondaryButton
+              onClick={() => navigate("/resume")}
+              text="RESUME"
+            />
+          </div>
         </div>
       </div>
-      <div className="relative top-[85%] text-center -mt-14 md:mt-0 mx-auto max-w-[90%] md:max-w-[50%]  overflow-hidden">
-        <h1 className="text-3xl md:text-5xl mt-2 font-Bebas">Summary</h1>
+      <div
+        ref={ref}
+        className={` top-[85%] text-center -mt-14 md:mt-36 mx-auto max-w-[90%] md:max-w-[50%]  overflow-hidden transition duration-500 ease-in ${
+          inView ? "opacity-1" : "opacity-0 translate-y-10 blur-md"
+        }`}
+      >
+        <h1 className="text-3xl md:text-5xl my-16 font-Bebas">Summary</h1>
         <p className="relative p-5 text-lg text-left z-10 text-gray-500">
           Passionate and driven web developer with a strong foundation in
           full-stack development and a proven track record in e-commerce and

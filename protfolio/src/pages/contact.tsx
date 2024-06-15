@@ -36,7 +36,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="z-0 h-[100vh] flex  bg-[#EAEFF5]  items-center justify-center">
+    <div className="z-0 h-[100vh] flex  ]  items-center justify-center">
       <div className="w-[400px] py-10 flex flex-col items-center justify-center  ">
         <h1 id="outer">
           <h1

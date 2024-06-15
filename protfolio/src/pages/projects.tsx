@@ -141,7 +141,7 @@ const projects = [
 
 const Projects: React.FC = () => {
   return (
-    <div className="z-0 items-center h-full py-8 bg-[#EAEFF5] text-center">
+    <div className="z-0 items-center h-full py-8 text-center">
       <h1 id="outer">
         <h1
           id="inner"
