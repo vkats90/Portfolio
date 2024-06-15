@@ -266,9 +266,10 @@ const Resume = () => {
             RESUME
           </h1>
         </h1>
-        <h1 className="text-4xl font-bold font-Bebas mt-16 underline decoration-primary ">
+        <h1 className="text-4xl font-bold font-Bebas mb-8 mt-16  ">
           EXPERIENCE
         </h1>
+        <div className="h-0.5 w-[50%] min-w-[350px] max-w-[90%] bg-primary "></div>
         {experience.map((position, i) => {
           return (
             i < 2 && (
@@ -284,14 +285,9 @@ const Resume = () => {
         })}
         <p className="font-semibold text-xl">Further experience lower down </p>
       </div>
-      <div
-        id="education"
-        className="flex flex-col my-16 border-t border-black items-center"
-      >
-        <h1 className="text-4xl font-bold font-Bebas my-8 underline decoration-primary">
-          EDUCATION
-        </h1>
-
+      <div id="education" className="flex flex-col my-16   items-center">
+        <h1 className="text-4xl font-bold font-Bebas my-8 ">EDUCATION</h1>
+        <div className="h-0.5 w-[50%] min-w-[350px] max-w-[90%] bg-primary "></div>
         {education.map((course) => {
           return (
             <EducationSection
@@ -306,11 +302,12 @@ const Resume = () => {
       </div>
       <div
         id="further-experience"
-        className={`flex flex-col  items-center my-16 border-t border-black `}
+        className={`flex flex-col  items-center my-16  `}
       >
-        <h1 className="text-4xl font-bold font-Bebas my-8 underline decoration-primary">
+        <h1 className="text-4xl font-bold font-Bebas my-8">
           FURTHER EXPERIENCE
         </h1>
+        <div className="h-0.5 w-[50%] min-w-[350px] max-w-[90%] bg-primary "></div>
         {experience.map((position, i) => {
           return (
             i >= 2 && (

@@ -1,6 +1,7 @@
-//replace main image
-// implement intersection observer
-// add images to experience
+//update text for shinobi project
+//add more minor projects
+// populate highlights
+//add bonus skills
 
 import { Outlet } from "react-router-dom";
 

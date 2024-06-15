@@ -1,15 +1,39 @@
+import { useCallback, useRef } from "react";
 import BackgroundImage from "../assets/Homepage-bg2.jpg";
 import MainButton from "../components/mainBotton";
 import SecondaryButton from "../components/secondaryButton";
 import { useNavigate } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
+import HighlightCard from "../components/highlight";
 
 const Home = () => {
   const navigate = useNavigate();
-  const { ref, inView } = useInView({
+
+  const { ref: inViewRef1, inView: inView1 } = useInView({
     triggerOnce: true,
     rootMargin: "-100px 0px",
   });
+  const { ref: inViewRef2, inView: inView2 } = useInView({
+    triggerOnce: true,
+    rootMargin: "-100px 0px",
+  });
+  const { ref: inViewRef3, inView: inView3 } = useInView({
+    triggerOnce: true,
+    rootMargin: "-100px 0px",
+  });
+
+  const setRefs = useCallback(
+    (
+      ref: HTMLDivElement | null,
+      inViewRef: (node?: Element | null) => void
+    ) => {
+      if (ref) {
+        inViewRef(ref);
+      }
+    },
+    [inViewRef1, inViewRef2, inViewRef3]
+  );
+
   return (
     <div className="z-0 h-full">
       <div className="relative h-[100vh]">
@@ -39,13 +63,14 @@ const Home = () => {
         </div>
       </div>
       <div
-        ref={ref}
+        id="summary"
+        ref={(ref) => setRefs(ref, inViewRef1)}
         className={` top-[85%] text-center -mt-14 md:mt-36 mx-auto max-w-[90%] md:max-w-[50%]  overflow-hidden transition duration-500 ease-in ${
-          inView ? "opacity-1" : "opacity-0 translate-y-10 blur-md"
+          inView1 ? "opacity-1" : "opacity-0 translate-y-10 blur-md"
         }`}
       >
         <h1 className="text-3xl md:text-5xl my-16 font-Bebas">Summary</h1>
-        <p className="relative p-5 text-lg text-left z-10 text-gray-500">
+        <p className="relative p-5 text-lg text-left z-10 text-gray-700">
           Passionate and driven web developer with a strong foundation in
           full-stack development and a proven track record in e-commerce and
           operations management. With hands-on experience in Frontend and
@@ -61,6 +86,38 @@ const Home = () => {
           solutions and driving digital growth. Let's connect and explore how I
           can add value to your web development projects.
         </p>
+      </div>
+      <div
+        ref={(ref) => setRefs(ref, inViewRef2)}
+        id="highlights"
+        className={`  text-center -mt-14 md:mt-36 mx-auto max-w-[90%] md:max-w-[70%]  overflow-hidden transition duration-500 ease-in ${
+          inView2 ? "opacity-1" : "opacity-0 translate-y-10 blur-md"
+        }`}
+      >
+        <h1 className="text-3xl md:text-5xl my-16 font-Bebas">Highlights</h1>
+        <div className="flex flex-wrap justify-center gap-5">
+          <HighlightCard
+            title="Project Highlight"
+            text="This is a brief description of the project. It showcases the main features and objectives of the project in a concise manner."
+          />
+          <HighlightCard
+            title="Project Highlight"
+            text="This is a brief description of the project. It showcases the main features and objectives of the project in a concise manner."
+          />
+          <HighlightCard
+            title="Project Highlight"
+            text="This is a brief description of the project. It showcases the main features and objectives of the project in a concise manner."
+          />
+        </div>
+      </div>
+      <div
+        ref={(ref) => setRefs(ref, inViewRef3)}
+        id="bonus"
+        className={` text-center -mt-14 md:mt-36 mx-auto max-w-[90%] md:max-w-[50%]  overflow-hidden transition duration-500 ease-in ${
+          inView3 ? "opacity-1" : "opacity-0 translate-y-10 blur-md"
+        }`}
+      >
+        <h1 className="text-3xl md:text-5xl my-16 font-Bebas">Bonus</h1>
       </div>
     </div>
   );
