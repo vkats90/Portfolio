@@ -3,7 +3,6 @@ import ProjectCard from "../components/ProjectCard";
 import Shackleton from "../assets/Shackleton.jpg";
 import Shinobi from "../assets/Shinobi.jpg";
 import API from "../assets/API.webp";
-import MobileEscape from "../assets/MobileEscape.png";
 
 const projects = [
   {

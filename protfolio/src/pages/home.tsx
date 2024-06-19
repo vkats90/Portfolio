@@ -1,10 +1,28 @@
-import { useCallback, useRef } from "react";
+import { useCallback } from "react";
 import BackgroundImage from "../assets/Homepage-bg2.jpg";
 import MainButton from "../components/mainBotton";
 import SecondaryButton from "../components/secondaryButton";
 import { useNavigate } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import HighlightCard from "../components/highlight";
+
+const highLightsData = [
+  {
+    title: "2 years of FrontEnd Development",
+    text: "I've built and maintained dynamic web applications used by hundreds of users weekly.",
+    link: "/projects",
+  },
+  {
+    title: "Self taught survivor",
+    text: "I've self taught myself Full Stack Development by completing the Full Stack Open Online Course from the University of Helsinki and the freeCodeCamp online course.",
+    link: "/resume",
+  },
+  {
+    title: "4 years of e-commerce management",
+    text: "I've been managing e-commerce operations for 4 years, including inventory management and automated processes.",
+    link: "/resume",
+  },
+];
 
 const Home = () => {
   const navigate = useNavigate();
@@ -35,11 +53,11 @@ const Home = () => {
   );
 
   return (
-    <div className="z-0 h-full">
+    <div className="z-0 h-full pb-80">
       <div className="relative h-[100vh]">
         <img
           src={BackgroundImage}
-          className="absolute top-0 right-0 h-[100vh] max-w-fit z-0 opacity-40 lg:opacity-100"
+          className="absolute top-0 right-0 h-[100vh] max-w-fit z-0 opacity-40 lg:opacity-70"
         />
         <div className="relative z-10 w-fit md:left-[15%] top-[40%] text-center m-auto md:m-0">
           <h1 id="outer">
@@ -94,20 +112,18 @@ const Home = () => {
           inView2 ? "opacity-1" : "opacity-0 translate-y-10 blur-md"
         }`}
       >
-        <h1 className="text-3xl md:text-5xl my-16 font-Bebas">Highlights</h1>
+        <h1 className="text-3xl md:text-5xl mt-8 mb-32 font-Bebas">
+          Highlights
+        </h1>
         <div className="flex flex-wrap justify-center gap-5">
-          <HighlightCard
-            title="Project Highlight"
-            text="This is a brief description of the project. It showcases the main features and objectives of the project in a concise manner."
-          />
-          <HighlightCard
-            title="Project Highlight"
-            text="This is a brief description of the project. It showcases the main features and objectives of the project in a concise manner."
-          />
-          <HighlightCard
-            title="Project Highlight"
-            text="This is a brief description of the project. It showcases the main features and objectives of the project in a concise manner."
-          />
+          {highLightsData.map((highlight, index) => (
+            <HighlightCard
+              key={"highlight" + index}
+              title={highlight.title}
+              text={highlight.text}
+              link={highlight.link}
+            />
+          ))}
         </div>
       </div>
       <div
@@ -117,7 +133,15 @@ const Home = () => {
           inView3 ? "opacity-1" : "opacity-0 translate-y-10 blur-md"
         }`}
       >
-        <h1 className="text-3xl md:text-5xl my-16 font-Bebas">Bonus</h1>
+        <h1 className="text-3xl md:text-5xl my-16 font-Bebas">
+          Other Interests
+        </h1>
+        <p className="text-gray-700">
+          I am an avid photographer with a keen interest in capturing nature and
+          product images. This hobby has honed my skills in using Adobe Suite,
+          fueling my passion for creating visually appealing and professional
+          images. See some examples below:
+        </p>
       </div>
     </div>
   );

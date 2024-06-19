@@ -221,7 +221,7 @@ const experience = [
 
 const Resume = () => {
   return (
-    <div className="z-0 h-full py-8 bg-[#EAEFF5]">
+    <div className="z-0 h-full py-8 bg-backg">
       <nav className="nav  p-4 bg-[#EAEFF5] md:border-r md:border-b-0 border-b my-8 border-black text-sm md:text-md m-auto max-w-[90%] md:max-w-[20vw] md:w-[700px] md:pl-6 md:top-[40vh] md:fixed">
         <h1 className="flex md:flex-col flex-row md:space-y-4 text-2xl font-semibold mb-4 space-x-4 md:space-x-0">
           {" "}
