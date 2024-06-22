@@ -80,10 +80,11 @@ const Home = () => {
           </div>
         </div>
       </div>
+  
       <div
         id="summary"
         ref={(ref) => setRefs(ref, inViewRef1)}
-        className={` top-[85%] text-center -mt-14 md:mt-36 mx-auto max-w-[90%] md:max-w-[50%]  overflow-hidden transition duration-500 ease-in ${
+        className={` top-[85%] text-center  md:mt-36 mx-auto max-w-[90%] md:max-w-[50%]  overflow-hidden transition duration-500 ease-in ${
           inView1 ? "opacity-1" : "opacity-0 translate-y-10 blur-md"
         }`}
       >
@@ -105,14 +106,15 @@ const Home = () => {
           can add value to your web development projects.
         </p>
       </div>
+      <div className="w-full h-0.5 bg-gray-200 mt-16"></div>
       <div
         ref={(ref) => setRefs(ref, inViewRef2)}
         id="highlights"
-        className={`  text-center -mt-14 md:mt-36 mx-auto max-w-[90%] md:max-w-[70%]  overflow-hidden transition duration-500 ease-in ${
+        className={`  text-center mt-16 md:mt-36 mx-auto max-w-[90%] md:max-w-[70%]  overflow-hidden transition duration-500 ease-in ${
           inView2 ? "opacity-1" : "opacity-0 translate-y-10 blur-md"
         }`}
       >
-        <h1 className="text-3xl md:text-5xl mt-8 mb-32 font-Bebas">
+        <h1 className="text-3xl md:text-5xl mt-8 mb-16 md:mb-36 font-Bebas">
           Highlights
         </h1>
         <div className="flex flex-wrap justify-center gap-5">
@@ -126,10 +128,11 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <div className="w-full h-0.5 bg-gray-200 mt-16"></div>
       <div
         ref={(ref) => setRefs(ref, inViewRef3)}
         id="bonus"
-        className={` text-center -mt-14 md:mt-36 mx-auto max-w-[90%] md:max-w-[50%]  overflow-hidden transition duration-500 ease-in ${
+        className={` text-center  md:mt-36 mx-auto max-w-[90%] md:max-w-[50%]  overflow-hidden transition duration-500 ease-in ${
           inView3 ? "opacity-1" : "opacity-0 translate-y-10 blur-md"
         }`}
       >

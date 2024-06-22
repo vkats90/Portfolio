@@ -25,7 +25,7 @@ export default function Hamburger() {
 
         <div className="block  w-full h-full top-0 left-0 ">
           <ul
-            className={`absolute flex flex-col top-[50px] text-xl text-gray-600 items-center justify-between min-h-[250px] h-[50%] w-[300px] py-[10%] rounded-lg shadow-sm shadow-white bg-[#EAEFF5] border-2 border-primary   transition duration-700 ${
+            className={`absolute flex flex-col top-[50px] text-xl text-gray-600 items-center justify-between min-h-[250px] h-[50%] w-[300px] py-[10%] rounded-sm shadow-sm shadow-white bg-[#EAEFF5]  transition duration-300 ${
               isNavOpen ? "" : "-translate-x-[150%]"
             }`}
           >
