@@ -3,17 +3,22 @@
 // populate highlights
 //add bonus skills
 
-import { Outlet } from "react-router-dom";
+import { createContext, useState } from 'react'
+import { Outlet } from 'react-router-dom'
+import TopBar from './components/topbar'
 
-import TopBar from "./components/topbar";
+const ViewContext = createContext({ inView: false, setInView: (value: boolean) => {} })
 
 function App() {
+  const [inView, setInView] = useState(false)
   return (
-    <div className="relative bg-backg">
-      <TopBar />
-      <Outlet />
-    </div>
-  );
+    <ViewContext.Provider value={{ inView, setInView: (value: boolean) => setInView(value) }}>
+      <div className="relative bg-backg">
+        <TopBar />
+        <Outlet />
+      </div>
+    </ViewContext.Provider>
+  )
 }
-
-export default App;
+export { ViewContext }
+export default App
