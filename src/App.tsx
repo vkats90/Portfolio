@@ -2,6 +2,7 @@
 //add more minor projects
 // populate highlights
 //add bonus skills
+// make highlights appear on scroll
 
 import { createContext, useState } from 'react'
 import { Outlet } from 'react-router-dom'

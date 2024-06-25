@@ -6,22 +6,27 @@ import { useNavigate } from 'react-router-dom'
 import { InView } from 'react-intersection-observer'
 import HighlightCard from '../components/highlight'
 import { ViewContext } from '../App'
+import { faGrav } from '@fortawesome/free-brands-svg-icons'
+import { faCode, faBriefcase } from '@fortawesome/free-solid-svg-icons'
 
 const highLightsData = [
   {
     title: '2 years of FrontEnd Development',
     text: "I've built and maintained dynamic web applications used by hundreds of users weekly.",
     link: '/projects',
+    icon: faCode,
   },
   {
     title: 'Self taught survivor',
     text: "I've self taught myself Full Stack Development by completing the Full Stack Open Online Course from the University of Helsinki and the freeCodeCamp online course.",
     link: '/resume',
+    icon: faGrav,
   },
   {
     title: '4 years of e-commerce management',
     text: "I've been managing e-commerce operations for 4 years, including inventory management and automated processes.",
     link: '/resume',
+    icon: faBriefcase,
   },
 ]
 
@@ -106,6 +111,7 @@ const Home = () => {
                   title={highlight.title}
                   text={highlight.text}
                   link={highlight.link}
+                  icon={highlight.icon}
                 />
               ))}
             </div>
