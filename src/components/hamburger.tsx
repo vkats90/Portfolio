@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function Hamburger() {
-  const [isNavOpen, setIsNavOpen] = useState(false);
-  const location = useLocation();
-  console.log(location.pathname);
+  const [isNavOpen, setIsNavOpen] = useState(false)
+  const location = useLocation()
+  console.log(location.pathname)
   return (
     <nav>
       <section className="MOBILE-MENU flex md:hidden">
@@ -19,14 +19,14 @@ export default function Hamburger() {
         <div
           onClick={() => setIsNavOpen((prev) => !prev)}
           className={`w-full h-[100vh] absolute bg-black/80  top-0 left-0 ${
-            isNavOpen ? "opacity-1" : "opacity-0 invisible"
+            isNavOpen ? 'opacity-1' : 'opacity-0 invisible'
           }`}
         ></div>
 
         <div className="block  w-full h-full top-0 left-0 ">
           <ul
-            className={`absolute flex flex-col top-[50px] text-xl text-gray-600 items-center justify-between min-h-[250px] h-[50%] w-[300px] py-[10%] rounded-sm shadow-sm shadow-white bg-[#EAEFF5]  transition duration-300 ${
-              isNavOpen ? "" : "-translate-x-[150%]"
+            className={`absolute flex flex-col top-[50px] text-xl text-gray-600 items-center justify-between min-h-[250px] h-[50%] w-[300px] py-[10%] rounded-sm shadow-sm shadow-white bg-backg  transition ease-in-out duration-300 ${
+              isNavOpen ? 'blur-none opacity-100 ' : '-translate-x-[150%] blur-sm opacity-0'
             }`}
           >
             <div //exit button
@@ -46,7 +46,7 @@ export default function Hamburger() {
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             </div>
-            {location.pathname != "/" && (
+            {location.pathname != '/' && (
               <Link
                 onClick={() => setIsNavOpen(false)}
                 className="self-center cursor-pointer hover:text-primary"
@@ -55,7 +55,7 @@ export default function Hamburger() {
                 HOME
               </Link>
             )}
-            {location.pathname != "/resume" && (
+            {location.pathname != '/resume' && (
               <Link
                 onClick={() => setIsNavOpen(false)}
                 className="self-center cursor-pointer hover:text-primary"
@@ -64,7 +64,7 @@ export default function Hamburger() {
                 RESUME
               </Link>
             )}
-            {location.pathname != "/projects" && (
+            {location.pathname != '/projects' && (
               <Link
                 onClick={() => setIsNavOpen(false)}
                 className="self-center cursor-pointer hover:text-primary"
@@ -73,7 +73,7 @@ export default function Hamburger() {
                 PROJECTS
               </Link>
             )}
-            {location.pathname != "/contact" && (
+            {location.pathname != '/contact' && (
               <Link
                 onClick={() => setIsNavOpen(false)}
                 className="self-center cursor-pointer hover:text-primary"
@@ -107,5 +107,5 @@ export default function Hamburger() {
       }
     `}</style>
     </nav>
-  );
+  )
 }

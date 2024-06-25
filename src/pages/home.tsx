@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import BackgroundImage from '../assets/Homepage-bg2.jpg'
 import MainButton from '../components/mainBotton'
 import SecondaryButton from '../components/secondaryButton'
@@ -28,6 +28,11 @@ const highLightsData = [
 const Home = () => {
   const navigate = useNavigate()
   const { setInView } = useContext(ViewContext)
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <div className="z-0 h-full pb-80">
