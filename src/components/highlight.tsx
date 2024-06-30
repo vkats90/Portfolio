@@ -30,7 +30,7 @@ const HighlightCard: React.FC<HighlightCardProps> = ({ title, text, link, icon }
       <div className="px-6 py-4">
         <h2 className="text-xl font-bold mb-2">{title}</h2>
         <hr className="border-t-2 border-primary my-2" />
-        <p className="text-gray-7000 text-base">{text}</p>
+        <p className="text-gray-7000 text-lg ">{text}</p>
       </div>
       <button className="  text-primary hover:text-emerald-800" onClick={() => navigate(link)}>
         Read more

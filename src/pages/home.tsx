@@ -8,6 +8,7 @@ import HighlightCard from '../components/highlight'
 import { ViewContext } from '../App'
 import { faGrav } from '@fortawesome/free-brands-svg-icons'
 import { faCode, faBriefcase } from '@fortawesome/free-solid-svg-icons'
+import Gallery from '../components/gallery'
 
 const highLightsData = [
   {
@@ -124,16 +125,17 @@ const Home = () => {
           <div
             ref={ref3}
             id="bonus"
-            className={` text-center  md:mt-36 mx-auto max-w-[90%] md:max-w-[50%]  overflow-hidden transition duration-500 ease-in ${
+            className={` text-center  md:mt-36 w-full  mx-auto max-w-[90%] md:max-w-[50%]  overflow-hidden transition duration-500 ease-in ${
               inView3 ? 'opacity-1' : 'opacity-0 translate-y-10 blur-md'
             }`}
           >
             <h1 className="text-3xl md:text-5xl my-16 font-Bebas">Other Interests</h1>
-            <p className="text-gray-700">
+            <p className="text-gray-700 my-16 text-start text-lg">
               I am an avid photographer with a keen interest in capturing nature and product images.
               This hobby has honed my skills in using Adobe Suite, fueling my passion for creating
               visually appealing and professional images. See some examples below:
             </p>
+            <Gallery />
           </div>
         )}
       </InView>

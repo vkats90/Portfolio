@@ -1,39 +1,37 @@
-import Input from "../components/Input";
-import TextArea from "../components/TextArea";
-import { useRef } from "react";
-import { sendEmail } from "../utils/emailJS";
+import Input from '../components/Input'
+import TextArea from '../components/TextArea'
+import { useRef } from 'react'
+import { sendEmail } from '../utils/emailJS'
 
 const Contact = () => {
-  const form = useRef<HTMLFormElement>(null);
+  const form = useRef<HTMLFormElement>(null)
 
   const getFormData = (form: HTMLFormElement) => {
-    const inputs = form.querySelectorAll<
-      HTMLInputElement | HTMLTextAreaElement
-    >("input, textarea");
-    const formData: { [key: string]: string } = {};
+    const inputs = form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('input, textarea')
+    const formData: { [key: string]: string } = {}
 
     inputs.forEach((input) => {
       if (input.name) {
-        formData[input.name.toLowerCase()] = input.value;
+        formData[input.name.toLowerCase()] = input.value
       }
-    });
+    })
 
-    sendEmail(formData);
+    sendEmail(formData)
 
-    return formData;
-  };
+    return formData
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
 
     if (!form.current) {
-      return;
+      return
     }
 
-    const formData = getFormData(form.current);
+    const formData = getFormData(form.current)
 
-    console.log(formData);
-  };
+    console.log(formData)
+  }
 
   return (
     <div className="z-0 h-[100vh] flex  ]  items-center justify-center">
@@ -59,24 +57,24 @@ const Contact = () => {
           <TextArea text="Message" />
           <button
             type="submit"
-            className="px-10 py-1 text-xl m-auto rounded-lg my-4 text-black border-2 border-primary shadow-md shadow-black/30  hover:bg-emerald-800 hover:bg-opacity-30 transition duration-200"
+            className="px-12 py-1 text-xl m-auto rounded-lg my-4 text-white bg-primary shadow-md shadow-black/30  hover:bg-emerald-800  transition duration-200"
           >
             Submit
           </button>
         </form>
         <p>
-          Or send me a direct email: to{" "}
+          Or send me a direct email: to{' '}
           <a
             href="mailto:mars77@gmail.com"
             target="_blank"
             className="text-primary/70 hover:text-primary"
           >
             mars77@gmail.com
-          </a>{" "}
+          </a>{' '}
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

@@ -6,7 +6,9 @@ import FreeCodeCampLogo from '../assets/freecodecamp-512.webp'
 import TechnionLogo from '../assets/Technion-logo.jpeg'
 import GrahamLogo from '../assets/Graham.png'
 import TRLogo from '../assets/TRlogo.webp'
-import { useEffect } from 'react'
+import { useEffect, useContext } from 'react'
+import { InView } from 'react-intersection-observer'
+import { ViewContext } from '../App'
 
 const education = [
   {
@@ -205,13 +207,14 @@ const experience = [
 ]
 
 const Resume = () => {
+  const { setInView } = useContext(ViewContext)
   useEffect(() => {
     // Scroll to the top when the component mounts
     window.scrollTo(0, 0)
   }, [])
   return (
     <div className="z-0 h-full py-8 bg-backg">
-      <nav className="nav  p-4 bg-[#EAEFF5] md:border-r md:border-b-0 border-b my-8 border-black text-sm md:text-md m-auto max-w-[90%] md:max-w-[20vw] md:w-[700px] md:pl-6 md:top-[40vh] md:fixed">
+      <nav className="nav  p-4 bg-backg md:border-r md:border-b-0 border-b my-8 border-black text-sm md:text-md m-auto max-w-[90%] md:max-w-[20vw] md:w-[700px] md:pl-6 md:top-[40vh] md:fixed">
         <h1 className="flex md:flex-col flex-row md:space-y-4 text-2xl font-semibold mb-4 space-x-4 md:space-x-0">
           {' '}
           JUMP TO SECTION:
@@ -234,32 +237,34 @@ const Resume = () => {
           </li>
         </ul>
       </nav>
-      <div id="experience" className={`flex flex-col mb-16  items-center transition-opacity `}>
-        <h1 id="outer">
-          <h1
-            id="inner"
-            className="effect-shine md:text-6xl text-5xl md:my-6 my-2 text-black font-Bebas "
-          >
-            RESUME
+      <InView rootMargin="-100px 0px" onChange={(inView) => (inView ? setInView(true) : '')}>
+        <div id="experience" className={`flex flex-col mb-16  items-center transition-opacity `}>
+          <h1 id="outer">
+            <h1
+              id="inner"
+              className="effect-shine md:text-6xl text-5xl md:my-6 my-2 text-black font-Bebas "
+            >
+              RESUME
+            </h1>
           </h1>
-        </h1>
-        <h1 className="text-4xl font-bold font-Bebas mb-8 mt-16  ">EXPERIENCE</h1>
-        <div className="h-0.5 w-[50%] min-w-[350px] max-w-[90%] bg-primary "></div>
-        {experience.map((position, i) => {
-          return (
-            i < 2 && (
-              <ExperienceSection
-                position={position.position}
-                company={position.company}
-                period={position.period}
-                logo={position.logo}
-                description={position.description}
-              />
+          <h1 className="text-4xl font-bold font-Bebas mb-8 mt-16  ">EXPERIENCE</h1>
+          <div className="h-0.5 w-[50%] min-w-[350px] max-w-[90%] bg-primary "></div>
+          {experience.map((position, i) => {
+            return (
+              i < 2 && (
+                <ExperienceSection
+                  position={position.position}
+                  company={position.company}
+                  period={position.period}
+                  logo={position.logo}
+                  description={position.description}
+                />
+              )
             )
-          )
-        })}
-        <p className="font-semibold text-xl">Further experience lower down </p>
-      </div>
+          })}
+          <p className="font-semibold text-xl">Further experience lower down </p>
+        </div>
+      </InView>
       <div id="education" className="flex flex-col my-16   items-center">
         <h1 className="text-4xl font-bold font-Bebas my-8 ">EDUCATION</h1>
         <div className="h-0.5 w-[50%] min-w-[350px] max-w-[90%] bg-primary "></div>

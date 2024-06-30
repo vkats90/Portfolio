@@ -1,14 +1,14 @@
 //update text for shinobi project
 //add more minor projects
 // populate highlights
-//add bonus skills
-// make highlights appear on scroll
+// add bonus skills
 
 import { createContext, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import TopBar from './components/topbar'
+import 'yet-another-react-lightbox/styles.css'
 
-const ViewContext = createContext({ inView: false, setInView: (value: boolean) => {} })
+const ViewContext = createContext({ inView: false, setInView: (_value: boolean) => {} })
 
 function App() {
   const [inView, setInView] = useState(false)
